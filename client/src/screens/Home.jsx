@@ -20,7 +20,7 @@ function Home(props) {
         ))
         }
       </div>
-      <button>Add a Character</button>
+      <Link to={'/addcharacter'}><button>Add a Character</button></Link>
     </div>
   );
 }
