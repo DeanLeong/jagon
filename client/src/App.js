@@ -6,6 +6,7 @@ import { getAllCharacters, getOneCharacter, postCharacter } from "./services/cha
 
 import Home from './screens/Home'
 import AddCharacter from './screens/AddCharacter'
+import Character from './screens/Character'
 
 function App() {
 
@@ -36,6 +37,9 @@ function App() {
       </Route>
       <Route exact path={'/addcharacter'}>
         <AddCharacter handleCreate={handleCreate}/>
+      </Route>
+      <Route exact path={'/characters/:id'}>
+        <Character />
       </Route>
     </div>
   );
