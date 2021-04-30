@@ -44,7 +44,7 @@ function App() {
         <AddCharacter handleCreate={handleCreate}/>
       </Route>
       <Route exact path={'/characters/:id'}>
-        <CharacterDetail history={history} handleDelete={handleDelete}/>
+        <CharacterDetail history={history} handleDelete={handleDelete} characters={characters}/>
       </Route>
     </div>
   );

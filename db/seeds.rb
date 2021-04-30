@@ -32,4 +32,3 @@ puts "#{Note.count} notes created!"
 )
 
 puts "#{Song.count} songs created!"
-

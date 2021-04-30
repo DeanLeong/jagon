@@ -1,21 +1,23 @@
 import React, {useState, useEffect, useHistory} from 'react';
 import { useParams } from 'react-router';
-import { getOneCharacter } from '../services/characters';
+import { getAllCharacters, getOneCharacter } from '../services/characters';
 
-function CharacterDetail(props) {
+function CharacterDetail({ characters }, props) {
   
-  //const history = useHistory()
   const [char, setChar] = useState([])
   const { id } = useParams()
   const { handleDelete } = props
 
+  console.log(characters)
+
   useEffect(() => {
-    const fetchChar = async () => {
-      const charData = await getOneCharacter(id)
-      setChar(charData)
+    if (characters.length) {
+      const getChar = characters.find((character) => character.id === Number(id))
+      setChar(getChar)
     }
-    fetchChar()
-  }, [id])
+  }, [id, characters])
+
+  console.log(char)
 
   const deleteCharacter = (e) => {
     e.preventDefault()
@@ -26,7 +28,7 @@ function CharacterDetail(props) {
   return (
     <div>
       <h1>{char?.name}</h1>
-      <img src={char.imgURL} className="char-img" alt="character portrait"></img>
+      <img src={char?.imgURL} className="char-img" alt="character portrait"></img>
       <p>{char?.biography}</p>
       <button onClick={deleteCharacter}>Delete {char?.name}</button>
     </div>

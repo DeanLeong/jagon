@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: :show
-  before_action :authorize_request, only: [:create, :update, :destroy]
-  before_action :set_user_character, only: [:update, :destroy]
+  #before_action :set_character, only: :show
+  #before_action :authorize_request, only: [:create, :update, :destroy]
+  #before_action :set_user_character, only: [:update, :destroy]
 
   #Get /characters
   def index
@@ -17,7 +17,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
-    @character.user = @current_user
+    #@character.user = @current_user
 
     if @character.save
       render json: @character, status: :created
@@ -44,9 +44,9 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
   end
 
-  def set_user_character
-    @character = @current_user.character.find(params[:id])
-  end
+  # def set_user_character
+  #   @character = @current_user.character.find(params[:id])
+  # end
 
   def character_params
     params.require(:character).permit(:name, :imgURL, :biography, :notes)
