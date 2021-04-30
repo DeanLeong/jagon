@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useHistory} from 'react';
-import { useParams } from 'react-router';
+import React, {useState, useEffect} from 'react';
+import { useParams, useHistory } from 'react-router-dom';
 import { destroyCharacter, getAllCharacters, getOneCharacter } from '../services/characters';
 
 function CharacterDetail({ characters }, props) {
@@ -8,6 +8,7 @@ function CharacterDetail({ characters }, props) {
   const { id } = useParams()
   //const [delete, setDeleted ] = useState(false)
   const { handleDelete } = props
+  const history = useHistory()
 
   console.log(characters)
 
@@ -20,10 +21,11 @@ function CharacterDetail({ characters }, props) {
 
   console.log(char)
   console.log(char.id)
+  console.log(props)
 
   const deleteCharacter = async (e) => {
     const deleted = await destroyCharacter(char?.id)
-    //setDeleted({ deleted })
+    history.push('/home')
  }
 
   return (

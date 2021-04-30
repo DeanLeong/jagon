@@ -37,14 +37,14 @@ function App() {
 
   return (
     <div className="App">
-      <Route exact path ={'/'}>
+      <Route exact path ={'/home'}>
         <Home characters={characters}/>
       </Route>
       <Route exact path={'/addcharacter'}>
         <AddCharacter handleCreate={handleCreate}/>
       </Route>
       <Route exact path={'/characters/:id'}>
-        <CharacterDetail history={history} handleDelete={handleDelete} characters={characters}/>
+        <CharacterDetail handleDelete={handleDelete} characters={characters}/>
       </Route>
     </div>
   );
