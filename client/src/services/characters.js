@@ -22,5 +22,5 @@ export const putCharacter = async (id, characterData) => {
 
 export const destroyCharacter = async (id) => {
   const resp = await api.delete(`/characters/${id}`)
-  return resp
+  return resp.data
 }

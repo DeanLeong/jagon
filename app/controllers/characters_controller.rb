@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  #before_action :set_character, only: :show
+  before_action :set_character, only: :show
   #before_action :authorize_request, only: [:create, :update, :destroy]
   #before_action :set_user_character, only: [:update, :destroy]
 
@@ -7,12 +7,12 @@ class CharactersController < ApplicationController
   def index
     @characters = Character.all
 
-    render json: @characters #include: :names :biography :quotes :imgurl status: :ok
+    render json: @characters
   end
   
   #Get /characters/1
   def show
-    render json: @character #include: :names :biography :quotes :imgurl status: :ok
+    render json: @character
   end
 
   def create
@@ -35,6 +35,8 @@ class CharactersController < ApplicationController
   end
 
   def destroy
+    @character = Character.find params[:id]
+
     @character.destroy
   end
 
