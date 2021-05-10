@@ -4,7 +4,8 @@ function AddCharacter({open, handleCreate}) {
   const [formData, setFormData] = useState({
     name: '',
     biography: '',
-    playerCharacter: '',
+    //playerCharacter: '',
+    note: '',
     imgURL: '',
   })
 
@@ -52,11 +53,11 @@ function AddCharacter({open, handleCreate}) {
           </label>
         </div>
         <div>
-          <label className="form-label">Notes:
+          <label className="form-label">Note:
             <input
               className="form-input"
               type="html"
-              name="notes"
+              name="note"
               value={formData.notes}
               onChange={handleChange}
             />
