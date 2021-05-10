@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useReducer} from 'react';
 import { useParams, useHistory, Redirect } from 'react-router-dom';
 import { destroyCharacter, getAllCharacters, getOneCharacter } from '../services/characters';
 
@@ -6,9 +6,11 @@ function CharacterDetail({ characters }, props) {
   
   const [char, setChar] = useState([])
   const { id } = useParams()
+  const [isLoaded, setLoaded] = useState(false)
   const [isDeleted, setIsDeleted] = useState(false)
   const { handleDelete } = props
   const history = useHistory()
+  const [value, setValue] = useReducer(x => x + 1, 0)
 
   console.log(characters)
 
@@ -16,6 +18,7 @@ function CharacterDetail({ characters }, props) {
     if (characters.length) {
       const getChar = characters.find((character) => character.id === Number(id))
       setChar(getChar)
+      setLoaded(true)
     }
   }, [id, characters])
 
@@ -24,18 +27,28 @@ function CharacterDetail({ characters }, props) {
   console.log(props)
 
   const deleteCharacter = async (e) => {
-    const deleted = await destroyCharacter(char?.id)
-    history.push('/home')
-    this.forceUpdate()
+    await destroyCharacter(char?.id)
+    sendRefresh()
   }
 
+  const sendRefresh = () => {
+    window.location.href="/home"
+  }
+
+  if (!isLoaded) {
+   return <h1>Loading...</h1>
+  }
+  // if (isDeleted) {
+  //   sendRefresh()
+  // }
+  //onClick={() => {window.location.href="/home"}}
 
   return (
     <div>
       <h1>{char?.name}</h1>
       <img src={char?.imgURL} className="char-img" alt="character portrait"></img>
       <p>{char?.biography}</p>
-      <button onClick={deleteCharacter}>Delete {char?.name}</button>
+      <button onClick={deleteCharacter} >Delete {char?.name}</button>
     </div>
   );
 }

@@ -8,11 +8,18 @@ import Home from './screens/Home'
 import AddCharacter from './screens/AddCharacter'
 import CharacterDetail from './screens/CharacterDetail'
 
+// function forcedUpdate() {
+  
+//   return () => setValue(value => value + 1)
+// }
+
 function App() {
 
   const history = useHistory()
   const [characters, setCharacters] = useState([])
+  const [isDeleted, setIsDeleted] = useState(false)
   const { id } = useParams()
+  const [value, setValue] = useState(0)
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -32,9 +39,13 @@ function App() {
 
   const handleDeleteCharacter = async (id) => {
     await destroyCharacter(id)
-     setCharacters((prevState) => prevState.filter((characters) => characters.id !== id))
-    // history.push('/home')
+     setCharacters(prevState => prevState.filter(character => character.id !==id))
   }
+
+  const forcedUpdate = () => {
+    return () => setValue(value => value + 1)
+  }
+
 
   return (
     <div className="App">
@@ -45,7 +56,7 @@ function App() {
         <AddCharacter handleCreate={handleCreate}/>
       </Route>
       <Route exact path={'/characters/:id'}>
-        <CharacterDetail handleDeleteCharacter={handleDeleteCharacter} characters={characters}/>
+        <CharacterDetail forcedUpdate={forcedUpdate} handleDeleteCharacter={handleDeleteCharacter} characters={characters}/>
       </Route>
     </div>
   );

@@ -67,6 +67,62 @@ Song.destroy_all
   imgURL: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F513343414%2F0x0.jpg%3Ffit%3Dscale',
 )
 
+@character8 = Character.create!(
+  name: 'Test Man 4',
+  biography: 'Test man bio',
+  note: 'Test Note',
+  playerCharacter: true,
+  imgURL: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F513343414%2F0x0.jpg%3Ffit%3Dscale',
+)
+
+@character9 = Character.create!(
+  name: 'Test Man 5',
+  biography: 'Test man bio',
+  note: 'Test Note',
+  playerCharacter: true,
+  imgURL: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F513343414%2F0x0.jpg%3Ffit%3Dscale',
+)
+
+@character10 = Character.create!(
+  name: 'Test Man 6',
+  biography: 'Test man bio',
+  note: 'Test Note',
+  playerCharacter: true,
+  imgURL: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F513343414%2F0x0.jpg%3Ffit%3Dscale',
+)
+
+@character11 = Character.create!(
+  name: 'Test Man 7',
+  biography: 'Test man bio',
+  note: 'Test Note',
+  playerCharacter: true,
+  imgURL: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F513343414%2F0x0.jpg%3Ffit%3Dscale',
+)
+
+@character12 = Character.create!(
+  name: 'Test Man 8',
+  biography: 'Test man bio',
+  note: 'Test Note',
+  playerCharacter: true,
+  imgURL: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F513343414%2F0x0.jpg%3Ffit%3Dscale',
+)
+
+@character13 = Character.create!(
+  name: 'Test Man 9',
+  biography: 'Test man bio',
+  note: 'Test Note',
+  playerCharacter: true,
+  imgURL: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F513343414%2F0x0.jpg%3Ffit%3Dscale',
+)
+
+@character14 = Character.create!(
+  name: 'Test Man 10',
+  biography: 'Test man bio',
+  note: 'Test Note',
+  playerCharacter: true,
+  imgURL: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F513343414%2F0x0.jpg%3Ffit%3Dscale',
+)
+
 puts "#{Character.count} characters created!"
 
 @note1 = Note.create!(
