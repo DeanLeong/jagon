@@ -30,9 +30,10 @@ function App() {
     history.push('/')
   }
 
-  const handleDelete = async (id) => {
+  const handleDeleteCharacter = async (id) => {
     await destroyCharacter(id)
-    setCharacters((prevState) => prevState.filter((character) => character.id !== id))
+     setCharacters((prevState) => prevState.filter((characters) => characters.id !== id))
+    // history.push('/home')
   }
 
   return (
@@ -44,7 +45,7 @@ function App() {
         <AddCharacter handleCreate={handleCreate}/>
       </Route>
       <Route exact path={'/characters/:id'}>
-        <CharacterDetail handleDelete={handleDelete} characters={characters}/>
+        <CharacterDetail handleDeleteCharacter={handleDeleteCharacter} characters={characters}/>
       </Route>
     </div>
   );
