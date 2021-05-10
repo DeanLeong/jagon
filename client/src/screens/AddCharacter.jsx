@@ -73,6 +73,27 @@ function AddCharacter({open, handleCreate}) {
             />
           </label>
         </div>
+        {/* <p>Is this a player character?</p>
+        <div>
+          <label className="form-label">
+            <input
+              className="form-input"
+              type="radio"
+              name="player-character-yes"
+              value="true"
+              />Yes
+          </label>
+        </div>
+        <div>
+          <label className="form-label">
+            <input
+              className="form-input"
+              type="radio"
+              name="player-character-no"
+              value="false"
+              />No
+          </label>
+        </div> */}
         <button className="button" id="save-button">Save Character</button>
         </form>
     </div>
