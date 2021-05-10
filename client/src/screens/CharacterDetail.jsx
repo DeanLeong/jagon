@@ -28,6 +28,7 @@ function CharacterDetail({ characters }, props) {
 
   const deleteCharacter = async (e) => {
     await destroyCharacter(char?.id)
+    history.push("/home")
     sendRefresh()
   }
 
@@ -38,10 +39,6 @@ function CharacterDetail({ characters }, props) {
   if (!isLoaded) {
    return <h1>Loading...</h1>
   }
-  // if (isDeleted) {
-  //   sendRefresh()
-  // }
-  //onClick={() => {window.location.href="/home"}}
 
   return (
     <div>

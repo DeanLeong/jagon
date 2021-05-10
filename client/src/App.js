@@ -34,16 +34,11 @@ function App() {
   const handleCreate = async (characterData) => {
     const newChar = await postCharacter(characterData)
     setCharacters((prevState) => [...prevState, newChar])
-    history.push('/')
+    history.push('/home')
   }
 
   const handleDeleteCharacter = async (id) => {
     await destroyCharacter(id)
-     setCharacters(prevState => prevState.filter(character => character.id !==id))
-  }
-
-  const forcedUpdate = () => {
-    return () => setValue(value => value + 1)
   }
 
 
@@ -56,7 +51,7 @@ function App() {
         <AddCharacter handleCreate={handleCreate}/>
       </Route>
       <Route exact path={'/characters/:id'}>
-        <CharacterDetail forcedUpdate={forcedUpdate} handleDeleteCharacter={handleDeleteCharacter} characters={characters}/>
+        <CharacterDetail handleDeleteCharacter={handleDeleteCharacter} characters={characters}/>
       </Route>
     </div>
   );

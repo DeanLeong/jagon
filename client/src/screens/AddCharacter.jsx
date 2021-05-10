@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Route, useParams, useHistory } from 'react-router-dom'
 
 function AddCharacter({open, handleCreate}) {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ function AddCharacter({open, handleCreate}) {
     note: '',
     imgURL: '',
   })
+  const [saved, setSaved] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,6 +24,7 @@ function AddCharacter({open, handleCreate}) {
     handleCreate({
       ...formData
     })
+    setSaved(saved)
   }
 
   return (
