@@ -1,0 +1,10 @@
+.char-form,
+.form-label {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 25px auto;
+  height: 100%;
+  width: 50%;
+}

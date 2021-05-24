@@ -21,7 +21,7 @@ function CharacterEdit(props) {
       setFormData({
         name: char?.name,
         biography: char?.biography,
-        note: char?.note,
+        note: char?.notes,
         imgURL: char?.imgURL
       })
     }
@@ -79,7 +79,7 @@ function CharacterEdit(props) {
               className="form-input"
               type="html"
               name="note"
-              value={formData.notes}
+              value={formData.note}
               onChange={handleChange}
             />
           </label>

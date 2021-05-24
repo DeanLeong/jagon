@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Route, useParams, useHistory } from 'react-router-dom'
+import { Route, useParams, useHistory } from 'react-router-dom';
+import './AddCharacter.css';
 
 function AddCharacter({open, handleCreate}) {
   const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ function AddCharacter({open, handleCreate}) {
         className="char-form"
         onSubmit={saveChar}>
         <div>
-          <label className="form-label">Name:
+          <label className="form-label" id="name-input">Name:
           <input
               className="form-input"
               type="html"
