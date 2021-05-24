@@ -25,10 +25,10 @@ function CharacterEdit(props) {
         imgURL: char?.imgURL
       })
     }
-    if (props.char.length) {
+    if (props.characters.length) {
        prefillForm()
      }
-  }, [props.char.length, id])
+  }, [props.characters.length, id])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,7 +40,7 @@ function CharacterEdit(props) {
 
   const updateChar = (e) => {
     e.preventDefault();
-    props.handleUpdate(id, {
+    props.handleUpdateCharacter(id, {
       ...formData,
     })
   }
@@ -48,6 +48,55 @@ function CharacterEdit(props) {
   return (
     <div className='char-edit-container'>
       <h1>Update Character</h1>
+      <form
+        className="char-form"
+        onSubmit={updateChar}>
+        <div>
+          <label className="form-label">Name:
+          <input
+              className="form-input"
+              type="html"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div>
+          <label className="form-label">Biography:
+            <input
+              className="form-input"
+              type="html"
+              name="biography"
+              value={formData.biography}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div>
+          <label className="form-label">Note:
+            <input
+              className="form-input"
+              type="html"
+              name="note"
+              value={formData.notes}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div>
+          <label className="form-label">Image URL:
+            <input
+              className="form-input"
+              type="html"
+              name="imgURL"
+              value={formData.imgURL}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <button className="button" id="save-button">Save Character</button>
+        </form>
     </div>
   );
 }

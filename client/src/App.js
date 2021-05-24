@@ -2,7 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react'
 import { Route, useParams, useHistory } from 'react-router-dom'
 
-import { destroyCharacter, getAllCharacters, getOneCharacter, postCharacter } from "./services/characters"
+import { destroyCharacter, getAllCharacters, getOneCharacter, postCharacter, putCharacter } from "./services/characters"
 
 import Home from './screens/Home'
 import AddCharacter from './screens/AddCharacter'
@@ -42,6 +42,16 @@ function App() {
     await destroyCharacter(id)
   }
 
+  const handleUpdateCharacter = async (id, characterData) => {
+    const updatedCharacter = await putCharacter(id, characterData);
+    setCharacters((prevState) =>
+      prevState.map((character) => {
+        return character.id === Number(id) ? updatedCharacter : character
+      })
+    )
+    history.push("/home")
+  }
+
 
   return (
     <div className="App">
@@ -55,7 +65,7 @@ function App() {
         <CharacterDetail handleDeleteCharacter={handleDeleteCharacter} characters={characters}/>
       </Route>
       <Route exact path={'/characters/:id/edit'}>
-        <CharacterEdit characters={characters} />
+        <CharacterEdit characters={characters} handleUpdateCharacter={handleUpdateCharacter}/>
       </Route>
     </div>
   );
