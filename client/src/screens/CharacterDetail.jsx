@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useReducer} from 'react';
-import { useParams, useHistory, Redirect } from 'react-router-dom';
+import { useParams, useHistory, Link } from 'react-router-dom';
 import { destroyCharacter, getAllCharacters, getOneCharacter } from '../services/characters';
 
 function CharacterDetail({ characters }, props) {
@@ -46,7 +46,9 @@ function CharacterDetail({ characters }, props) {
       <img src={char?.imgURL} className="char-img" alt="character portrait"></img>
       <p>{char?.biography}</p>
       <button onClick={deleteCharacter} >Delete {char?.name}</button>
-      <button>Update {char?.name}</button>
+      <Link className="edit-link" to={`/characters/${char?.name}/edit`}><button>Update {char?.name}</button></Link>
+      
+
     </div>
   );
 }
