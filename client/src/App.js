@@ -7,6 +7,7 @@ import { destroyCharacter, getAllCharacters, getOneCharacter, postCharacter } fr
 import Home from './screens/Home'
 import AddCharacter from './screens/AddCharacter'
 import CharacterDetail from './screens/CharacterDetail'
+import CharacterEdit from './screens/CharacterEdit'
 
 // function forcedUpdate() {
   
@@ -52,6 +53,9 @@ function App() {
       </Route>
       <Route exact path={'/characters/:id'}>
         <CharacterDetail handleDeleteCharacter={handleDeleteCharacter} characters={characters}/>
+      </Route>
+      <Route exact path={'/characters/:id/edit'}>
+        <CharacterEdit characters={characters} />
       </Route>
     </div>
   );

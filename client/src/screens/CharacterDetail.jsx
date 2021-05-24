@@ -46,7 +46,7 @@ function CharacterDetail({ characters }, props) {
       <img src={char?.imgURL} className="char-img" alt="character portrait"></img>
       <p>{char?.biography}</p>
       <button onClick={deleteCharacter} >Delete {char?.name}</button>
-      <Link className="edit-link" to={`/characters/${char?.name}/edit`}><button>Update {char?.name}</button></Link>
+      <Link className="edit-link" to={`/characters/${char?.id}/edit`}><button>Update {char?.name}</button></Link>
       
 
     </div>
