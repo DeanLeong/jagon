@@ -125,5 +125,10 @@ puts "#{Note.count} notes created!"
 puts "#{Song.count} songs created!"
 
 @npc1 = Npc.create!(
-  
+  name: 'NPC 1',
+  biography: 'This is NPC1',
+  note: 'test note',
+  imgURL: 'https://upload.wikimedia.org/wikipedia/en/1/1b/NPC_wojak_meme.png'
 )
+
+puts "#{Npc.count} NPCs created!"
