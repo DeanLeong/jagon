@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="App">
       <Route exact path ={'/home'}>
-        <Home characters={characters}/>
+        <Home characters={characters} npcs={npcs}/>
       </Route>
       <Route exact path={'/addcharacter'}>
         <AddCharacter handleCreate={handleCreate}/>
