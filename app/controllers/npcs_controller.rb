@@ -1,13 +1,15 @@
-class NpcController < ApplicationController
+class NpcsController < ApplicationController
 
-  #Get /characters
+  before_action :set_npc, only: :show
+
+  #Get /NPCS
   def index
       @npcs = Npc.all
 
-     render json: @characters
+     render json: @npcs
   end
 
-  #Get /characters/1
+  #Get /NPC/1
   def show
     render json: @npc
   end
@@ -15,10 +17,10 @@ class NpcController < ApplicationController
   def create
    @npc = Npc.new(npc_params)
 
-   if character.save
-     render json: @character, status: created
+   if npc.save
+     render json: @npc, status: created
    else
-     render json: @character.errors, status: :unprocessable_entity
+     render json: @npc.errors, status: :unprocessable_entity
    end
   end
 
