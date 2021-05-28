@@ -9,6 +9,7 @@
 Character.destroy_all
 Note.destroy_all
 Song.destroy_all
+Npc.destory_all
 
 
 @character1 = Character.create!(
@@ -122,3 +123,7 @@ puts "#{Note.count} notes created!"
 )
 
 puts "#{Song.count} songs created!"
+
+@npc1 = Npc.create!(
+  
+)

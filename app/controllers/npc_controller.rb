@@ -45,7 +45,7 @@ class NpcController < ApplicationController
   end
 
   def npc_params
-   params.require(:character).permit(:name, :imgURL, :biography, :notes)
+   params.require(:npc).permit(:name, :imgURL, :biography, :notes)
   end
 end
 
