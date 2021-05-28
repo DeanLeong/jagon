@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Route, useParams, useHistory } from 'react-router-dom'
 
 import { destroyCharacter, getAllCharacters, getOneCharacter, postCharacter, putCharacter } from "./services/characters"
+import { destroyNpc, getAllNpcs, getOneNpc, postNpc, putNpc } from "./services/npcs"
 
 import Home from './screens/Home'
 import AddCharacter from './screens/AddCharacter'
@@ -53,11 +54,14 @@ function App() {
     history.push("/home")
   }
 
-  // useEffect(() => {
-  //   const fetchNpcs = async () => {
-  //     const npcData = await getAllNpcs()
-  //   }
-  // })
+  useEffect(() => {
+    const fetchNpcs = async () => {
+      const npcData = await getAllNpcs()
+      setNpcs(npcData)
+    }
+    fetchNpcs()
+  }, [])
+  console.log(npcs)
 
 
   return (

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :characters
   resources :notes
   resources :songs
+  resources :npcs
 end
