@@ -33,9 +33,9 @@ class NpcController < ApplicationController
   end
 
   def destroy
-    @npc = Character.find params[:id]
+    @npc = Npc.find params[:id]
 
-   @character.destroy
+   @npc.destroy
   end
 
   private

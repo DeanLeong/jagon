@@ -18,6 +18,7 @@ function App() {
 
   const history = useHistory()
   const [characters, setCharacters] = useState([])
+  const [npcs, setNpcs] = useState([])
   const [isDeleted, setIsDeleted] = useState(false)
   const { id } = useParams()
   const [value, setValue] = useState(0)
@@ -51,6 +52,12 @@ function App() {
     )
     history.push("/home")
   }
+
+  // useEffect(() => {
+  //   const fetchNpcs = async () => {
+  //     const npcData = await getAllNpcs()
+  //   }
+  // })
 
 
   return (

@@ -5,6 +5,8 @@ import './Home.css'
 
 function Home(props) {
 
+console.log(props)
+
   return (
     <div className="home-container">
       <h1 className="site-h1">Jagon</h1>
@@ -21,6 +23,12 @@ function Home(props) {
         }
       </div>
       <Link to={'/addcharacter'}><button>Add a Character</button></Link>
+      <hr></hr>
+      <div className="npcs">
+        {
+
+        }
+      </div>
     </div>
   );
 }
