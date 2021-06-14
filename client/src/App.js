@@ -9,6 +9,7 @@ import Home from './screens/Home'
 import AddCharacter from './screens/AddCharacter'
 import CharacterDetail from './screens/CharacterDetail'
 import CharacterEdit from './screens/CharacterEdit'
+import Landing from './screens/Landing'
 
 // function forcedUpdate() {
   
@@ -66,6 +67,9 @@ function App() {
 
   return (
     <div className="App">
+      <Route exact path={'/'}>
+        <Landing />
+      </Route>
       <Route exact path ={'/home'}>
         <Home characters={characters} npcs={npcs}/>
       </Route>

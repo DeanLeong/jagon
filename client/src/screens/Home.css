@@ -16,6 +16,15 @@
 }
 
 .char-img {
-  height: 200px;
-  width: 175px;
+  height: 400px;
+  width: 275px;
+}
+
+.npc-img {
+  height: 350px;
+  width: 250px;
+}
+
+.npc-name {
+  margin-bottom: 0;
 }

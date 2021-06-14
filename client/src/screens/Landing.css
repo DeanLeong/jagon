@@ -1,0 +1,16 @@
+.landing-container {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+
+.title,
+.infotxt,
+.reviews,
+.enter-button {
+  color: white;
+}
+
+.title {
+  margin-top: 0;
+}

@@ -1,0 +1,13 @@
+.character-notes {
+  border: 1px solid black;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+#delete-char,
+#update-char {
+  align-content: center;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  margin-top: 2.5vh;
+}
