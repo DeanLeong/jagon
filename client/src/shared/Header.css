@@ -1,0 +1,21 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-contents {
+  display: flex;
+  flex-direction: row;
+  padding-left: 25vw;
+  padding-right: 25vw;
+}
+
+#nav-home,
+#nav-notes,
+#nav-about {
+  display: flex;
+  justify-content: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}

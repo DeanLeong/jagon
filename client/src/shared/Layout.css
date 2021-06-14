@@ -1,0 +1,10 @@
+.Layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-children {
+  margin: 0 auto;
+  width: 100vw;
+}

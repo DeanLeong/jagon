@@ -7,8 +7,14 @@ function Header(props) {
     <div className="nav-bar">
       <div className="nav-contents">
           <Link to="/home">
-            <p>Home</p>
+            <p id="nav-home">Home</p>
           </Link>
+          <Link to="/groupnotes">
+            <p id="nav-notes">Notes</p>
+          </Link>
+        <Link to="/about">
+            <p id="nav-about">About</p>
+        </Link>
       </div>
     </div>
   );
