@@ -34,7 +34,7 @@ function AddCharacter({open, handleCreate}) {
       <form
         className="char-form"
         onSubmit={saveChar}>
-        <div>
+        <div className="char-form-input">
           <label className="form-label" id="name-input">Name:
           <input
               className="form-input"
@@ -45,7 +45,7 @@ function AddCharacter({open, handleCreate}) {
             />
           </label>
         </div>
-        <div>
+        <div className="char-form-input">
           <label className="form-label">Biography:
             <input
               className="form-input"
@@ -56,7 +56,7 @@ function AddCharacter({open, handleCreate}) {
             />
           </label>
         </div>
-        <div>
+        <div className="char-form-input">
           <label className="form-label">Note:
             <input
               className="form-input"
@@ -67,7 +67,7 @@ function AddCharacter({open, handleCreate}) {
             />
           </label>
         </div>
-        <div>
+        <div className="char-form-input">
           <label className="form-label">Image URL:
             <input
               className="form-input"
@@ -78,28 +78,7 @@ function AddCharacter({open, handleCreate}) {
             />
           </label>
         </div>
-        {/* <p>Is this a player character?</p>
-        <div>
-          <label className="form-label">
-            <input
-              className="form-input"
-              type="radio"
-              name="player-character-yes"
-              value="true"
-              />Yes
-          </label>
-        </div>
-        <div>
-          <label className="form-label">
-            <input
-              className="form-input"
-              type="radio"
-              name="player-character-no"
-              value="false"
-              />No
-          </label>
-        </div> */}
-        <button className="button" id="save-button">Save Character</button>
+        <button className="char-save-button" id="save-button">Save Character</button>
         </form>
     </div>
   );

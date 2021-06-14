@@ -7,4 +7,20 @@
   margin: 25px auto;
   height: 100%;
   width: 50%;
+  padding-top: 0%;
+}
+
+.char-form {
+  border: 1px solid black;
+  width: 500px;
+  max-width: 500px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+#save-button {
+  height: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
