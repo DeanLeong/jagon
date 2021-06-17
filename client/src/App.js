@@ -4,12 +4,16 @@ import { Route, useParams, useHistory } from 'react-router-dom'
 
 import { destroyCharacter, getAllCharacters, getOneCharacter, postCharacter, putCharacter } from "./services/characters"
 import { destroyNpc, getAllNpcs, getOneNpc, postNpc, putNpc } from "./services/npcs"
+import { destroyNote, getAllNotes, getOneNote, postNote, putNote } from './services/notes';
 
 import Home from './screens/Home'
 import AddCharacter from './screens/AddCharacter'
 import CharacterDetail from './screens/CharacterDetail'
 import CharacterEdit from './screens/CharacterEdit'
 import Landing from './screens/Landing'
+import GroupNotes from './screens/GroupNotes'
+
+import Layout from './shared/Layout'
 
 // function forcedUpdate() {
   
@@ -35,6 +39,24 @@ function App() {
   }, [])
   console.log(characters)
 
+  useEffect(() => {
+    const fetchNpcs = async () => {
+      const npcData = await getAllNpcs()
+      setNpcs(npcData)
+    }
+    fetchNpcs()
+  }, [])
+  console.log(npcs)
+
+  useEffect(() => {
+    const fetchNotes = async () => {
+      const noteData = await getAllNotes()
+      setNotes(noteData)
+    }
+    fetchNotes()
+  }, [])
+  console.log(notes)
+
 
   const handleCreate = async (characterData) => {
     const newChar = await postCharacter(characterData)
@@ -56,18 +78,10 @@ function App() {
     history.push("/home")
   }
 
-  useEffect(() => {
-    const fetchNpcs = async () => {
-      const npcData = await getAllNpcs()
-      setNpcs(npcData)
-    }
-    fetchNpcs()
-  }, [])
-  console.log(npcs)
-
 
   return (
     <div className="App">
+    <Layout>
       <Route exact path={'/'}>
         <Landing />
       </Route>
@@ -83,6 +97,10 @@ function App() {
       <Route exact path={'/characters/:id/edit'}>
         <CharacterEdit characters={characters} handleUpdateCharacter={handleUpdateCharacter}/>
       </Route>
+      <Route exact path={'/groupnotes'}>
+        <GroupNotes notes={notes} />
+      </Route>
+    </Layout>
     </div>
   );
 }

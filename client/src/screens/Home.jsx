@@ -9,7 +9,6 @@ function Home(props) {
 console.log(props)
 
   return (
-    <Layout>
     <div className="home-container">
       <h1 className="site-h1">Jagon</h1>
       <h3>The Squad</h3>
@@ -41,7 +40,6 @@ console.log(props)
         }
       </div>
     </div>
-    </Layout>
   );
 }
 
