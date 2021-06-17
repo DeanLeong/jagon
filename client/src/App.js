@@ -20,6 +20,7 @@ function App() {
 
   const history = useHistory()
   const [characters, setCharacters] = useState([])
+  const [notes, setNotes] = useState([])
   const [npcs, setNpcs] = useState([])
   const [isDeleted, setIsDeleted] = useState(false)
   const { id } = useParams()
