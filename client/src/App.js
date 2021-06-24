@@ -57,7 +57,7 @@ function App() {
   }, [])
   console.log(notes)
 
-
+//character CRUD
   const handleCreate = async (characterData) => {
     const newChar = await postCharacter(characterData)
     setCharacters((prevState) => [...prevState, newChar])
@@ -78,6 +78,25 @@ function App() {
     history.push("/home")
   }
 
+//notes CRUD
+  const handleCreateNote = async (noteData) => {
+    const newNote = await postNote(noteData)
+    setNotes((prevState) => [...prevState, newNote])
+    history.push('/groupnotes')
+  }
+
+  const handleDeleteNote = async (id) => {
+    await destroyNote(id)
+  }
+
+  const handleUpdateNote = async (id, noteData) => {
+    const updatedNote = await putNote(id, noteData);
+    setNotes((prevState) =>
+      prevState.map((note) => {
+        return note.id === Number(id) ? updatedNote : note
+      })
+    )
+  }
 
   return (
     <div className="App">
@@ -98,8 +117,8 @@ function App() {
         <CharacterEdit characters={characters} handleUpdateCharacter={handleUpdateCharacter}/>
       </Route>
       <Route exact path={'/groupnotes'}>
-        <GroupNotes notes={notes} />
-      </Route>
+          <GroupNotes notes={notes} handleCreateNote={handleCreateNote} handleDeleteNote={handleDeleteNote} handleUpdateNote={handleUpdateNote}/>
+      </Route>  
     </Layout>
     </div>
   );
