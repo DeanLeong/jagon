@@ -113,9 +113,28 @@ Npc.destroy_all
 puts "#{Character.count} characters created!"
 
 @note1 = Note.create!(
-  note: 'Test note',
+  note: 'Test note 1',
 )
 
+@note2 = Note.create!(
+  note: 'Test note 2',
+)
+
+@note2 = Note.create!(
+  note: 'Test note 3',
+)
+
+@note3 = Note.create!(
+  note: 'Test note 4',
+)
+
+@note4 = Note.create!(
+  note: 'Test note 5',
+)
+
+@note5 = Note.create!(
+  note: 'Test note 6',
+)
 puts "#{Note.count} notes created!"
 
 @song1 = Song.create!(

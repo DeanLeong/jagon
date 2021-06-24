@@ -81,10 +81,10 @@ function App() {
 
   return (
     <div className="App">
-    <Layout>
       <Route exact path={'/'}>
         <Landing />
       </Route>
+      <Layout>
       <Route exact path ={'/home'}>
         <Home characters={characters} npcs={npcs}/>
       </Route>

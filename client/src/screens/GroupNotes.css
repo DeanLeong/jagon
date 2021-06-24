@@ -1,4 +1,18 @@
 .group-notes-container {
   min-height: 100vh;
   min-width: 100vw;
+  background-color: #88aac2;
+}
+
+.notes-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.group-note {
+  border: 1px solid black;
+  max-height: 250px;
+  max-width: 250px;
 }
