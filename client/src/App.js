@@ -12,6 +12,7 @@ import CharacterDetail from './screens/CharacterDetail'
 import CharacterEdit from './screens/CharacterEdit'
 import Landing from './screens/Landing'
 import GroupNotes from './screens/GroupNotes'
+import AddNotes from './screens/AddNotes';
 
 import Layout from './shared/Layout'
 
@@ -118,7 +119,10 @@ function App() {
       </Route>
       <Route exact path={'/groupnotes'}>
           <GroupNotes notes={notes} handleCreateNote={handleCreateNote} handleDeleteNote={handleDeleteNote} handleUpdateNote={handleUpdateNote}/>
-      </Route>  
+      </Route>
+      <Route>
+        <AddNotes notes={notes} handleCreateNote={handleCreateNote}/>    
+      </Route>
     </Layout>
     </div>
   );

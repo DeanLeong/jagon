@@ -1,7 +1,7 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
-function AddNotes(props) {
+function AddNotes(props, handleCreateNote) {
   const editorRef = useRef(null);
    const log = () => {
      if (editorRef.current) {
@@ -41,6 +41,7 @@ function AddNotes(props) {
   
   return (
     <div>
+      <h3>Add a new Group Note</h3>
        <Editor
          onInit={(evt, editor) => editorRef.current = editor}
          initialValue="<p>This is the initial content of the editor.</p>"
